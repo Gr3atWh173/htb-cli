@@ -29,41 +29,30 @@ def print_machine(argv):
 
 def print_machines(argv):
     global htb
-    print_active = False
-    print_retired = False
 
-    if len(argv) != 0:
-        s = argv.pop()
-        if s == "retired":
-            print_retired = True
-        elif s == "active":
-            print_active = True
+    if len(argv) == 0:
+        argv.append("all")
     
     machines = htb.get_machines()
-    to_print = []
-    if print_retired:
-        for machine in machines:
-            if machine.get("retired_date") != None:
-                to_print.append(machine)
-    elif print_active:
-        for machine in machines:
-            if machine.get("retired_date") == None:
-                to_print.append(machine)
-    else:
-        to_print = machines
-
     t = PrettyTable(['ID', 'Name', 'OS', 'Points', 'Maker'])
-    for machine in to_print:
-        t.add_row([machine["id"], machine["name"], machine["os"], machine["points"], machine["maker"]["name"]])
+    
+    fltr = argv.pop()
+    for machine in machines:
+        if fltr == "retired" and (machine.get("retired_date") != None):
+            t.add_row([machine["id"], machine["name"], machine["os"], machine["points"], machine["maker"]["name"]])
+        elif fltr == "active" and (machine.get("retired_date") == None):
+            t.add_row([machine["id"], machine["name"], machine["os"], machine["points"], machine["maker"]["name"]])
+        elif fltr == "all":
+            t.add_row([machine["id"], machine["name"], machine["os"], machine["points"], machine["maker"]["name"]])
 
     print(t)
     
 def print_usage():
     print("USAGE:")
-    print("LIST MACHINES: python hackthebox.py list machines [active/retired]")
-    print("GET A SPECIFIC MACHINE: hackthebox.py get machine (machine id)")
-    print("SWITCH VPN: switch (lab)")
-    print("SUBMIT FLAG: hackthebox.py submit (root/user) (mid) (hash) (difficulty[10-100])")
+    print("LIST MACHINES:          python hackthebox.py list machines [active/retired]")
+    print("GET A SPECIFIC MACHINE: python hackthebox.py get machine (machine id)")
+    print("SWITCH VPN:             python hackthebox.py switch (lab)")
+    print("SUBMIT FLAG:            python hackthebox.py submit (root/user) (mid) (hash) (difficulty[10-100])")
 
 def ls(argv):
     global htb
