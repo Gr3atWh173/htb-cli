@@ -22,7 +22,7 @@ setup(
     # There are some restrictions on what makes a valid project name
     # specification here:
     # https://packaging.python.org/specifications/core-metadata/#name
-    name='htb_cli',  # Required
+    name='htb-cli',  # Required
 
     # Versions should comply with PEP 440:
     # https://www.python.org/dev/peps/pep-0440/
@@ -76,30 +76,30 @@ setup(
     # Classifiers help users find your project by categorizing it.
     #
     # For a list of valid classifiers, see https://pypi.org/classifiers/
-    classifiers=[  # Optional
+    #classifiers=[  # Optional
         # How mature is this project? Common values are
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 4 - Beta',
+     #   'Development Status :: 4 - Beta',
 
         # Indicate who your project is intended for
-        'Intended Audience :: Hackers',
-        'Topic :: Information Security :: Helper Scripts',
+     #   'Intended Audience :: Developers',
+     #   'Topic :: Information Security :: Helper Scripts',
 
         # Pick your license as you wish
-        'License :: OSI Approved :: MIT License',
+     #   'License :: OSI Approved :: MIT License',
 
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
         # These classifiers are *not* checked by 'pip install'. See instead
         # 'python_requires' below.
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-    ],
+     #   'Programming Language :: Python :: 3',
+     #   'Programming Language :: Python :: 3.4',
+     #   'Programming Language :: Python :: 3.5',
+     #   'Programming Language :: Python :: 3.6',
+     #   'Programming Language :: Python :: 3.7',
+    # ],
 
     # This field adds keywords for your project which will appear on the
     # project page. What does your project relate to?

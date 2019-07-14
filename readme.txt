@@ -2,7 +2,7 @@ HTB_CLI - Interact with HTB through a terminal.
 Copyleft: Gr3atWh173
 based upon https://github.com/kulinacs/htb
 
-INSTALL: pip install htb_cli
+INSTALL: pip install htb-cli
 
 SETUP:
 1. get your API key from HackTheBox (profile settings)
