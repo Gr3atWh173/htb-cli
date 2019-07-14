@@ -178,7 +178,7 @@ setup(
     #        'sample=sample:main',
     #    ],
     # },
-    scripts=['bin/hackthebox'],
+    scripts=['bin/hackthebox.py'],
 
     # List additional URLs that are relevant to your project as a dict.
     #
