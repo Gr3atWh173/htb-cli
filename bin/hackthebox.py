@@ -27,6 +27,12 @@ def print_machine(argv):
         else:
             print(str(value))
 
+def reset_machine(argv):
+    global htb
+    mid = int(argv.pop())
+
+    print(htb.reset_machine(mid)["output"])
+
 def print_machines(argv):
     global htb
 
@@ -51,6 +57,7 @@ def print_usage():
     print("USAGE:")
     print("LIST MACHINES:          python hackthebox.py list machines [active/retired]")
     print("GET A SPECIFIC MACHINE: python hackthebox.py get machine (machine id)")
+    print("RESET A MACHINE:        hackthebox.py reset (machine id)")
     print("SWITCH VPN:             python hackthebox.py switch (lab)")
     print("SUBMIT FLAG:            python hackthebox.py submit (root/user) (mid) (hash) (difficulty[10-100])")
 
@@ -111,6 +118,8 @@ def main():
         exit()
     elif t == "submit":
         submit_flag(argv)
+    elif t == "reset":
+        reset_machine(argv)
     else:
         print("I don't understand")
         exit()

@@ -11,5 +11,6 @@ SETUP:
 USAGE:
 LIST MACHINES:          hackthebox.py list machines [active/retired]
 GET A SPECIFIC MACHINE: hackthebox.py get machine (machine id)
+RESET A MACHINE:        hackthebox.py reset (machine id)
 SWITCH VPN:             hackthebox.py switch (lab)
-SUBMIT FLAG:            hackthebox.py submit (root/user) (mid) (hash) (difficulty [10-100])
+SUBMIT FLAG:            hackthebox.py submit (root/user) (machine id) (hash) (difficulty [10-100])
